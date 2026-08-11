@@ -19,22 +19,48 @@
     plasma = {
       enable = true;
       overrideConfig = true;
+      configFile = {
+        "kcminputrc" = {
+          "Libinput" = {
+            "DisableWhileTyping" = false;
+          };
+        };
+      };
       workspace = {
-        theme = "org.kde.breezedark.desktop";
-        colorScheme = "BreezeDark";
+        lookAndFeel = "org.kde.breezedark.desktop";
         iconTheme = "Papirus-Dark";
+        wallpaper = "/etc/nixos/img/wallpaper.png";
+        wallpaperFillMode = "preserveAspectCrop";
         cursor.theme = "Bibata-Modern-Classic";
         cursor.size = 24;
+      };
+      kwin = {
+        virtualDesktops = {
+          number = 1;
+          rows = 1;
+        };
+        effects = {
+          blur = {
+            enable = true;
+            strength = 8;
+            noiseStrength = 0;
+          };
+          translucency.enable = true;
+        };
       };
       panels = [
         {
           location = "bottom";
+          height = 40;
+          lengthMode = "fit";
+          opacity = "translucent";
+          floating = true;
           widgets = [
             "org.kde.plasma.kickoff"
             {
               iconTasks = {
                 launchers = [
-                  "applications:org.kde.systemsettings.desktop"
+                  "applications:systemsettings.desktop"
                   "applications:org.kde.dolphin.desktop"
                   "applications:firefox.desktop"
                 ];
@@ -44,9 +70,6 @@
             "org.kde.plasma.systemtray"
             "org.kde.plasma.digitalclock"
           ];
-          height = 40;
-          lengthMode = "fit";
-          opacity = "translucent";
         }
       ];
       fonts = {
@@ -77,5 +100,7 @@
   home.packages = with pkgs; [
     prismlauncher
     vscodium
+    fastfetch
+    cmatrix
   ];
 }
