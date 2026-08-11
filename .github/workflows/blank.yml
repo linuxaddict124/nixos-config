@@ -21,7 +21,8 @@ jobs:
 
       - name: Generate flake.lock
         run: |
-          nix --extra-experimental-features 'nix-command flakes' flake update ./dotfiles
+          cd dotfiles
+          nix --extra-experimental-features 'nix-command flakes' flake update
 
       - name: Upload flake.lock to Release Assets
         uses: softprops/action-gh-release@v2
