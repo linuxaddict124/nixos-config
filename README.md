@@ -26,6 +26,8 @@ Here is a list of packages that are installed on the system (Not including KDE P
 - `nano`
 - Papirus Icon Theme
 - Bibata Cursors
+- Firefox
+- Flatpak
 
 ## Contributing
 We don't generally allow contributions (as of now), but feel free to fork this GitHub Repo!
