@@ -12,17 +12,17 @@
       grub = {
         enable = true;
         device = "nodev"; # Set it to your boot drive if you don't have UEFI.
-        efiSupport = true; # Not required if your PC doesn't have UEFI support.
+        efiSupport = true; # Not required if your PC doesn't have UEFI.
       };
       systemd-boot.enable = false;
-      efi.canTouchEfiVariables = true; # Recommended to remove if you don't have UEFI
+      efi.canTouchEfiVariables = true; # Not required if your PC doesn't have UEFI.
     };
   };
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
-  time.timeZone = "America/Los_Angeles";
+  time.timeZone = "America/Los_Angeles"; # Set your timezone here
 
   services = {
     desktopManager.plasma6.enable = true;
@@ -42,6 +42,7 @@
     okular
     khelpcenter
     qrca
+    konsole
   ];
 
   services.xserver.xkb.layout = "us"; # Change this if required.
@@ -70,6 +71,7 @@
     nano
     papirus-icon-theme
     bibata-cursors
+    kitty
   ];
 
   fonts.packages = with pkgs; [
@@ -78,5 +80,5 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  system.stateVersion = "26.05";
+  system.stateVersion = "26.05"; # Do not modify this unless you REALLY know what you're doing.
 }
