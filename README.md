@@ -28,6 +28,7 @@ Here is a list of packages that are installed on the system (Not including KDE P
 - Bibata Cursors
 - Firefox
 - Flatpak
+- Kitty (Terminal)
 
 ## Contributing
 We don't generally allow contributions (as of now), but feel free to fork this GitHub Repo!
