@@ -27,6 +27,9 @@ Here is a list of packages that are installed on the system (Not including KDE P
 - Papirus Icon Theme
 - Bibata Cursors
 
+## Contributing
+We don't generally allow contributions (as of now), but feel free to fork this GitHub Repo!
+
 ## Credits
 ### Wallpaper
 The wallpaper is from the GitHub Repository, [nixos/nixos-artwork](https://github.com/nixos/nixos-artwork). Please note that it's an archived repo.
