@@ -26,7 +26,6 @@ jobs:
 
       - name: Zip dotfiles folder
         run: |
-          zip -r "nixos-config-${{ github.event.release.tag_name }}.zip" dotfiles run: |
           zip -r "nixos-config-${{ github.event.release.tag_name }}.zip" dotfiles
 
       - name: Upload Release Assets
