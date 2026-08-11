@@ -28,5 +28,6 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: dotfiles/flake.lock
+          nixos-config-${{ github.event.release.tag_name }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
