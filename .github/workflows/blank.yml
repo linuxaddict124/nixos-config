@@ -1,0 +1,31 @@
+name: Generate flake.lock file on Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  update-lockfile:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.target_commitish }}
+
+      - name: Install Nix
+        uses: nixbuild/nix-quick-install-action@v29
+
+      - name: Generate flake.lock
+        run: |
+          nix --extra-experimental-features 'nix-command flakes' flake update ./dotfiles
+
+      - name: Upload flake.lock to Release Assets
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dotfiles/flake.lock
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
