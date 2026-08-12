@@ -42,7 +42,6 @@
     okular
     khelpcenter
     qrca
-    konsole
   ];
 
   services.xserver.xkb.layout = "us"; # Change this if required.
