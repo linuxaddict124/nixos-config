@@ -95,6 +95,15 @@
         };
       };
     };
+    programs.kitty = {
+      enable = true;
+      settings = {
+        dynamic_background_opacity = true;
+        mouse_hide_wait = "3";
+        background_opacity = "0.6";
+        background_blur = 5;
+      };
+    };
   };
 
   home.packages = with pkgs; [
