@@ -2,9 +2,15 @@
 
 {
   home = {
-    username = "linuxaddict124"; # Set it to your current username.
-    homeDirectory = "/home/linuxaddict124"; # Set it to your home directory.
+    username = "user"; # Set it to your current username.
+    homeDirectory = "/home/user"; # Set it to your home directory.
     stateVersion = "26.05";
+    packages = with pkgs; [
+      prismlauncher
+      vscodium
+      fastfetch
+      cmatrix
+    ];
   };
 
   programs = {
@@ -96,11 +102,4 @@
       };
     };
   };
-
-  home.packages = with pkgs; [
-    prismlauncher
-    vscodium
-    fastfetch
-    cmatrix
-  ];
 }

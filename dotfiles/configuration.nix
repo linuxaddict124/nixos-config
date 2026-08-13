@@ -53,7 +53,7 @@
 
   services.libinput.enable = true;
 
-  users.users.linuxaddict124 = {
+  users.users.user = { # Replace user with your username
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     packages = with pkgs; [

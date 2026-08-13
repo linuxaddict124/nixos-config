@@ -25,7 +25,7 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.linuxaddict124 = import ./home.nix; # Replace linuxaddict124 with your username
+            users.user = import ./home.nix; # Replace user with your username
             backupFileExtension = "backup";
 
             sharedModules = [

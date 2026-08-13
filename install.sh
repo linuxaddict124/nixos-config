@@ -61,7 +61,7 @@ case "$inst_choice" in
         fi
         cp -r ./dotfiles/* /etc/nixos/
         echo "Make sure to modify the new config files to be like your current user."
-        echo "Once you done that, run this command:"
+        echo "Once you are done, run this command:"
         echo "sudo nixos-rebuild switch --flake /etc/nixos#nixos"
         exit 0
     ;;
@@ -77,7 +77,7 @@ case "$inst_choice" in
             cp -r ./dotfiles/* /mnt/etc/nixos/
             nixos-install --flake /mnt/etc/nixos#nixos
             echo "Set up your main user password"
-            nixos-enter --root /mnt -c 'passwd linuxaddict124'
+            nixos-enter --root /mnt -c 'passwd user'
             read -p "Enter post-installation shell? (y/n): " root_choice
             case "$root_choice" in
                 y|Y )
