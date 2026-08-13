@@ -22,12 +22,16 @@ case "$exper_choice" in
         echo "Exiting..."
         exit 0
     ;;
+    * )
+        echo "Invaild option. Exiting with 1..."
+        exit 1
+    ;;
 esac
 
 read -p "Are you replacing your config or installing NixOS with this config? (Replace/Installation): " inst_choice
 case "$inst_choice" in
     r|R|replace|Replace )
-        read -p "Replacing a config is COMPLETELY experimental. Are you sure? (y/n): " double_check
+        read -p "You will not be able to recover your previous config. Are you sure? (y/n): " double_check
         case "$double_check" in
             y|Y )
                 echo "Continuing..."
@@ -37,7 +41,7 @@ case "$inst_choice" in
                 exit 0
             ;;
             * )
-                echo "Please type in a vaild answer."
+                echo "Please type in a vaild option"
                 exit 1
             ;;
         esac
@@ -84,10 +88,18 @@ case "$inst_choice" in
                     echo "Exiting..."
                     exit 0
                 ;;
+                * )
+                    echo "Please type in a vaild option."
+                    exit 1
+                ;;
             esac
         else
             echo "/mnt is not mounted, quitting..."
             exit 1
         fi
+    ;;
+    * )
+        echo "Invaild option. Exiting with 1..."
+        exit 1
     ;;
 esac
