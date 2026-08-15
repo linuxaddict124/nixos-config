@@ -10,6 +10,7 @@
       vscodium
       fastfetch
       cmatrix
+      gh
     ];
   };
 
