@@ -14,7 +14,6 @@ KDE Plasma settings is also part of the config, so you're basically using my exa
 Here is a list of packages that are installed on the system (Not including KDE Plasma Packages or dependencies)
 
 ### User Packages
-- Prism Launcher
 - VS Codium
 - `fastfetch`
 - `cmatrix`
