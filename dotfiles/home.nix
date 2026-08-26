@@ -6,7 +6,6 @@
     homeDirectory = "/home/user"; # Set it to your home directory.
     stateVersion = "26.05";
     packages = with pkgs; [
-      prismlauncher
       vscodium
       fastfetch
       cmatrix
