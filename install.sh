@@ -60,7 +60,7 @@ case "$inst_choice" in
             rm /etc/nixos/home.nix
         fi
         cp -r ./dotfiles/* /etc/nixos/
-        echo "Make sure to modify the new config files to be like your current user."
+        echo "Make sure to modify the new config files (Specifically configuration.nix, home.nix, and flake.nix) to be like your current user."
         echo "Once you are done, run this command:"
         echo "sudo nixos-rebuild switch --flake /etc/nixos#nixos"
         exit 0
@@ -69,7 +69,7 @@ case "$inst_choice" in
         echo "Attempting to install..."
         if mountpoint -q "/mnt"; then
             if [ ! -d ./dotfiles ]; then
-                echo "Failed to file dotfiles folder. Exiting with 1..."
+                echo "Failed to find dotfiles folder. Exiting with 1..."
                 exit 1
             fi
             nixos-generate-config --root /mnt
