@@ -76,6 +76,8 @@ case "$inst_choice" in
             rm /mnt/etc/nixos/configuration.nix
             cp -r ./dotfiles/* /mnt/etc/nixos/
             nixos-install --flake /mnt/etc/nixos#nixos
+            echo "If you got an error before this message, please restart the script. Otherwise, wait 3 seconds."
+            sleep 3
             echo "Set up your main user password"
             nixos-enter --root /mnt -c 'passwd user'
             read -p "Enter post-installation shell? (y/n): " root_choice
