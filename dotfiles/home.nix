@@ -9,7 +9,6 @@
       vscodium
       fastfetch
       cmatrix
-      gh
     ];
   };
 
@@ -20,18 +19,12 @@
       shellAliases = {
         nuh-uh = "echo Yuh uh";
         yuh-uh = "echo Nuh uh";
+        sys-rebuild = "sudo nixos-rebuild switch --flake /etc/nixos#nixos";
       };
     };
     plasma = {
       enable = true;
       overrideConfig = true;
-      configFile = {
-        "kcminputrc" = {
-          "Libinput" = {
-            "DisableWhileTyping" = false;
-          };
-        };
-      };
       workspace = {
         lookAndFeel = "org.kde.breezedark.desktop";
         iconTheme = "Papirus-Dark";
