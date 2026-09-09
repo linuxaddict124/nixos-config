@@ -26,13 +26,13 @@ jobs:
 
       - name: Zip dotfiles folder
         run: |
-          zip -r "nixos-config-${{ github.event.release.tag_name }}.zip" dotfiles
+          zip -r nixos-config.zip dotfiles
 
       - name: Upload Release Assets
         uses: softprops/action-gh-release@v2
         with:
           files: |
             dotfiles/flake.lock
-            nixos-config-${{ github.event.release.tag_name }}.zip
+            nixos-config.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
