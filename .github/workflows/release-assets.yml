@@ -1,4 +1,4 @@
-name: Generate flake.lock file on Release
+name: Generate binary files on Release
 
 on:
   release:
