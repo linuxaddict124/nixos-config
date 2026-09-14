@@ -63,6 +63,9 @@ case "$inst_choice" in
         echo "Make sure to modify the new config files (Specifically configuration.nix, home.nix, and flake.nix) to be like your current user."
         echo "Once you are done, run this command:"
         echo "sudo nixos-rebuild switch --flake /etc/nixos#nixos"
+        echo "Or if you are upgrading this NixOS Configuration, simply run this command:"
+        echo "sys-rebuild"
+        sleep 3
         exit 0
     ;;
     i|I|installation|Installation )
