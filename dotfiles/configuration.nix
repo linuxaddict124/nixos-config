@@ -8,6 +8,7 @@
 
   boot = {
     kernelPackages = pkgs.linuxPackages_6_18;
+    kernelParams = [ "systemd.tpm2_wait=false" ]
     loader = {
       grub = {
         enable = true;
